@@ -1,0 +1,45 @@
+#a dynamic code for differen dataset to compute MLR
+
+
+from scipy import stats
+import numpy as np
+from matplotlib import pyplot as plt
+import statistics
+import pandas as pd
+from pandas import DataFrame
+from statsmodels.api import OLS
+from statsmodels.formula.api import ols
+from statsmodels.stats.anova import anova_lm
+
+
+n= int (input("Total No of Values to done Multiple Linear Regression?"))
+print("No of valyes for each coulmn should be same and equals to Total No of Values to done Multiple Linear Regression ")
+X1=[input("Values for X1")]
+X2=[input("Values for X2")]
+Y=[input("Values for Y")]
+for _ in range(n):
+
+    X1.append(X1)
+
+for _ in range(n):
+
+    X2.append(X2)
+
+for _ in range(n):
+
+    Y.append(Y)
+a=input("Column Heading for X1")
+b=input("Column Heading for X2")
+c=input("Column Heading for Y")
+df = pd.DataFrame(
+ {
+   a: X1
+ , b: X2
+ , c: Y
+ }
+ )
+print(df)
+
+Reg = ols(formula = "c~a+b", data = df)
+Fit = Reg.fit()
+print(Fit.summary())
